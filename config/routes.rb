@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'stations/index'
+  get 'stations/show'
+  get 'stations/new'
+  get 'stations/edit'
   get 'properties/index'
   get 'properties/show'
   get 'properties/new'
