@@ -1,2 +1,29 @@
-<h1>Properties#index</h1>
-<p>Find me in app/views/properties/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+<h1>Property List</h1>
+<p><%= link_to 'New Property', new_property_path %></p>
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Rent</th>
+      <th>Address</th>
+      <th>Building Age</th>
+      <th>Remarks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @properties.each do |property| %>  
+    <tr>
+      <td><%= property.property_name %></td>
+      <td><%= property.rent.to_s(:delimited) %>¥</td>
+      <td><%= property.address %></td>
+      <td><%= property.age %></td>
+      <td><%= property.remarks %></td>
+      <td><%= link_to 'Show', property %></td>
+      <td><%= link_to 'Edit', edit_property_path(property) %></td>
+      <td><%= link_to 'Delete', property, method: :delete, data: { confirm: 'Are you sure to Delete this Property?' }%></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,2 +1,26 @@
-<h1>Properties#show</h1>
-<p>Find me in app/views/properties/show.html.erb</p>
+<p id="notice"><% notice %></p>
+<h1>Property Detail</h1>
+<p>
+  <strong>Property Name:</strong>
+  <%= @property.property_name %>
+</p>
+<p>
+  <strong>Rent:</strong>
+  <%= @property.rent.to_s(:delimited) %>¥
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @property.address %>
+</p>
+<p>
+  <strong>Building Age:</strong>
+  <%= @property.age %> Years
+</p>
+<p>
+  <strong>Remarks:</strong>
+  <%= @property.remarks %>
+</p>
+
+
+<%= link_to 'edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>
