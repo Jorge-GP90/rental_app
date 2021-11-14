@@ -20,7 +20,24 @@
   <strong>Remarks:</strong>
   <%= @property.remarks %>
 </p>
-
-
+<hr>
+<% if @property.stations.any? %>
+  <% @stations.each.with_index(1) do |station, index| %>
+    <h3><%= "Nearest Station #{index}" %></h3>
+    <p>
+      <strong>Name of railway:</strong>
+      <%= station.line %>
+    </p>
+    <p>
+      <strong>Station Name:</strong>
+      <%= station.station_name %>
+    </p>
+    <p>
+      <strong>How many minutes walk:</strong>
+      <%= station.minutes %> min/mins
+    </p>
+  <% end %>
+<% end %>
+<br>
 <%= link_to 'edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>

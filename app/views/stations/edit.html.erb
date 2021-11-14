@@ -1,2 +1,6 @@
-<h1>Stations#edit</h1>
-<p>Find me in app/views/stations/edit.html.erb</p>
+<h1>Editing Station</h1>
+<%= render 'form', station: @station %>
+<br>
+<%= link_to 'show', @station %> |
+<%= link_to 'Back', station_path %>
+

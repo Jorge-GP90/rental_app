@@ -1,2 +1,4 @@
-<h1>Stations#new</h1>
-<p>Find me in app/views/stations/new.html.erb</p>
+<h1>New Station</h1>
+<%= render 'form', station: @station %>
+<br>
+<%= link_to 'Back', station_path %>

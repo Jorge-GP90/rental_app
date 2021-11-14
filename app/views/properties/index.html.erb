@@ -13,7 +13,8 @@
     </tr>
   </thead>
   <tbody>
-  <% @properties.each do |property| %>  
+  <% @properties.each do |property| %> 
+    <br> 
     <tr>
       <td><%= property.property_name %></td>
       <td><%= property.rent.to_s(:delimited) %>¥</td>
